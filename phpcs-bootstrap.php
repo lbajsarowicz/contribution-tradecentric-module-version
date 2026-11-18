@@ -11,25 +11,20 @@
 
 declare(strict_types=1);
 
-namespace Magento\Framework\Component {
-    if (!class_exists(\Magento\Framework\Component\ComponentRegistrar::class, false)) {
-        class ComponentRegistrar
-        {
-            public const MODULE   = 'Module';
-            public const LIBRARY  = 'Library';
-            public const THEME    = 'Theme';
-            public const LANGUAGE = 'Language';
+namespace Magento\Framework\Component;
 
-            // phpcs:ignore Magento2.Functions.StaticFunction
-            public static function register(string $type, string $componentName, string $path): void
-            {
-                // no-op stub for static analysis tooling
-            }
+if (!class_exists(\Magento\Framework\Component\ComponentRegistrar::class, false)) {
+    class ComponentRegistrar
+    {
+        public const MODULE   = 'Module';
+        public const LIBRARY  = 'Library';
+        public const THEME    = 'Theme';
+        public const LANGUAGE = 'Language';
+
+        // phpcs:ignore Magento2.Functions.StaticFunction
+        public static function register(string $type, string $componentName, string $path): void
+        {
+            // no-op stub for static analysis tooling
         }
     }
 }
-
-namespace {
-    // Restore global namespace for any subsequent includes.
-}
-
